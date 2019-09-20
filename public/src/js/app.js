@@ -23,7 +23,6 @@ const app = new Vue({
           }
         });
         const {results} = resp.data;
-        console.log(results, 'results');
         if (this.page === 1) {
           this.results = results;
         } else {
