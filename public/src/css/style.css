@@ -1,0 +1,42 @@
+:root {
+    --primary: #ff6a1d
+}
+
+header {
+    background: white;
+    height: 100px;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+    line-height: 100px;
+}
+
+header span {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    color: var(--primary);
+}
+
+.page-title {
+    font-size: 18px;
+}
+
+.search-container {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.page-searching {
+    opacity: 0.3;
+}
+
+.loading-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+}
