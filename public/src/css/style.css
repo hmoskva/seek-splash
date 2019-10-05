@@ -1,5 +1,24 @@
 :root {
-    --primary: #ff6a1d
+    --primary: #ff6a1d;
+    --primary-light: #ff6a1d;
+}
+
+::-webkit-scrollbar {
+    width: 0.4em;
+    height: 0.4em;
+    display: flex;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-light);
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 header {
@@ -39,4 +58,9 @@ header span {
     justify-content: center;
     top: 0;
     bottom: 0;
+}
+
+.row-results {
+    height: 300px;
+    overflow: auto;
 }

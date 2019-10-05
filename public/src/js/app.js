@@ -33,6 +33,20 @@ const app = new Vue({
       } finally {
         this.processing = false;
       }
+    },
+    async handleScroll() {
+      const resultsContainer = document.getElementById('results_row');
+      if (resultsContainer.scrollTop + resultsContainer.clientHeight >= resultsContainer.scrollHeight) {
+        this.page++;
+        await this.fetchResults();
+      }
+    }
+  },
+  watch: {
+    query() {
+      if (this.results.length) {
+        this.results = [];
+      }
     }
   }
 });

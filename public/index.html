@@ -24,7 +24,10 @@
           Serve really cool high resolution pictures through seek-splash!
         </div>
         <div class="input-group input-group-lg mb-5">
-          <input type="text" class="form-control" v-model="query" autofocus>
+          <input type="text"
+                 class="form-control"
+                 v-model="query"
+                 autofocus>
           <div class="input-group-append">
             <button class="btn btn-secondary" @click="fetchResults">Search</button>
           </div>
@@ -36,9 +39,13 @@
       <div class="loading-container text-center" v-if="!!processing">
         Processing...
       </div>
-      <div class="row no-gutters"
-           v-if="!!query && results.length > 0">
-        <div class="col-6 col-sm-4 p-2" v-for="(result, index) in results" :key="`result_item_${index}`">
+      <div class="row no-gutters row-results"
+           id="results_row"
+           v-show="!!query && results.length > 0"
+           v-on:scroll.passive="handleScroll">
+        <div class="col-6 col-sm-4 p-2"
+             v-for="(result, index) in results"
+             :key="`result_item_${index}`">
           <img :src="result.urls.regular"
                :alt="result.alt_description"
                class="img-result w-100"
@@ -46,7 +53,7 @@
         </div>
       </div>
       <div class="row"
-           v-else>
+           v-if="!query || results.length < 1">
         <div class="col-12 text-center">
           <img src="./src/images/search.svg" alt="" height="300" class="mb-3">
           <br>
