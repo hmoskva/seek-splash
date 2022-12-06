@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/hmoskva/seek-splash#readme",
   "devDependencies": {
-    "http-server": "^0.9.0"
+    "http-server": "^14.1.1"
   }
 }
